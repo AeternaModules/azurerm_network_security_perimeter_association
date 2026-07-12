@@ -1,3 +1,7 @@
+output "network_security_perimeter_associations_id" {
+  description = "Map of id values across all network_security_perimeter_associations, keyed the same as var.network_security_perimeter_associations"
+  value       = { for k, v in azurerm_network_security_perimeter_association.network_security_perimeter_associations : k => v.id }
+}
 output "network_security_perimeter_associations_access_mode" {
   description = "Map of access_mode values across all network_security_perimeter_associations, keyed the same as var.network_security_perimeter_associations"
   value       = { for k, v in azurerm_network_security_perimeter_association.network_security_perimeter_associations : k => v.access_mode }
